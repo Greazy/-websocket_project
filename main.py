@@ -13,7 +13,7 @@ from fastapi import HTTPException
 from ConnectionManager import ConnectionManager
 
 
-TIMEOUT = 10
+TIMEOUT = 30*60
 
 logger = logging.getLogger("uvicorn.error")
 

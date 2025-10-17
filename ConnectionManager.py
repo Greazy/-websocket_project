@@ -43,7 +43,6 @@ class ConnectionManager:
             try:
                 await connection.send_text(message)
             except Exception:
-                print("Local broadcast not working -----------")
                 pass
 
     async def listen_to_channel(self):
@@ -72,7 +71,7 @@ class ConnectionManager:
             elapsed = asyncio.get_event_loop().time() - start
             remaining = timeout - int(elapsed)
 
-            logger.info(f"Waiting for stop: {count} client(s), remaining time: {remaining}")
+            logger.info(f"Waiting for disconnect: {count} client(s), remaining time: {remaining}")
 
             if count == 0:
                 logger.info("All clients disconnected before timer")
